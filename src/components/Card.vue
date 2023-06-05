@@ -12,12 +12,16 @@
                 <button class="btn btn-primary" @click="addToCart(item.id)">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </button>
+                <button class="btn btn-primary" @click="addToCart(item.id)">
+                    <router-link :to="{ path: '/Inform' }">상세 페이지</router-link>
+                </button>
                 <small class="price text-muted">
-                    {{ lib.getNumberFormatted(item.price)}}원
+                    {{ lib.getNumberFormatted(item.price)}}P
                 </small>
 
-                <small class="real text-danger">
-                    {{ lib.getNumberFormatted(item.price - (item.price * item.discountPer / 100)) }}%
+                <small class="discount text-danger">
+                    {{ lib.getNumberFormatted(item.price + (item.price * item.discountPer / 100)) }}P
+                    봉사 신청
                 </small>
             </div>
         </div>

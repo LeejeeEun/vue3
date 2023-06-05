@@ -5,10 +5,9 @@
                 <thead>
                 <tr>
                     <th>번호</th>
-                    <th>주문자명</th>
+                    <th>신청자명</th>
                     <th>주소</th>
-                    <th>결제 수단</th>
-                    <th>구입 항목</th>
+                    <th>신청항목</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -16,7 +15,7 @@
                     <td>{{ state.orders.length - idx1 }}</td>
                     <td>{{ o.name }}</td>
                     <td>{{ o.address }}</td>
-                    <td>{{ o.payment }}</td>
+<!--                    <td>{{ o.payment }}</td>-->
                     <td>
                         <div v-for="(i, idx2) in o.items" :key="idx2">{{i.name}}</div>
                     </td>

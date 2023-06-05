@@ -5,16 +5,28 @@ import Order from "@/pages/Order.vue";
 import Orders from "@/pages/Orders.vue";
 import {createRouter, createWebHistory} from "vue-router";
 
+import Read from "@/pages/Read.vue";
+import Create from "@/pages/Create.vue";
+import Detail from "@/pages/Detail.vue";
+import BoardForm from "@/pages/BoardForm.vue";
+import Inform from "@/pages/Inform.vue";
+
 const routes= [
     {path: '/', component: Home},
     {path: '/login', component: Login},
     {path: '/cart', component: Cart},
     {path: '/order', component: Order},
-    {path: '/orders', component: Orders}
+    {path: '/orders', component: Orders},
+    {path: "/Read", name: "Read", component: Read},
+    {path: '/create/:contentId?', name: 'Create', component: Create},
+    {path: "/detail/:contentId", name: "Detail", component: Detail},
+    {path: "/createAccount", name: "BoardForm", component: BoardForm},
+    {path: "/Inform", name: "Inform", component: Inform},
 ]
 
 const router = createRouter({
     history: createWebHistory(),
     routes
 })
+
 export default router;
