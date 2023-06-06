@@ -1,6 +1,6 @@
 <template>
     <div class="pcard shadow-sm">
-        <span class="img" :style="{backgroundImage:`url(${pitem.img_Path})`}"/>
+        <span class="img" :style="{backgroundImage:`url(${pitem.imgPath})`}"/>
         <div class="pcard-body">
             <p class="pcard-text">
                 <span>{{ pitem.name }}&nbsp;</span>
@@ -13,7 +13,7 @@
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </button>
                 <small class="price text-muted">
-                    {{ lib.getNumberFormatted(pitem.price)}}원
+                    {{ lib.getNumberFormatted(pitem.price)}}P
                 </small>
                 <!--                <small class="real text-danger">-->
                 <!--                    {{ lib.getNumberFormatted(pitem.price - (pitem.price * pitem.discountPer / 100)) }}%-->

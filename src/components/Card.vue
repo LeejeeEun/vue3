@@ -14,7 +14,7 @@
                     <i class="fa fa-heart" aria-hidden="true"></i>
                 </button>
 
-                <button class="btn btn-success" @click="load(item.id)">
+                <button class="btn btn-success" @click="addToCart(item.id)">
                     <i class="fa fa-globe" aria-hidden="true"></i>
                     <router-link :to="{ path: '/Inform' }" class="text-white">상세 페이지</router-link>
                 </button>

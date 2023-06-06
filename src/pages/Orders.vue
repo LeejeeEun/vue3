@@ -16,11 +16,8 @@
                     <td>{{ state.orders.length - idx1 }}</td>
                     <td>{{ o.name }}</td>
                     <td>{{ o.address }}</td>
-                    <td>{{ parseInt(o.payment) + 3 }}</td>
-
-                    <td>
-                        <div v-for="(i, idx2) in o.items" :key="idx2">{{i.name}}</div>
-                    </td>
+                    <td>{{o.payment }}</td>
+                    <td><div v-for="(i, idx2) in o.items" :key="idx2">{{i.name}}</div></td>
                 </tr>
                 </tbody>
             </table>

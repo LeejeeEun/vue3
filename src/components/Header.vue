@@ -44,12 +44,12 @@
                         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
                         <circle cx="12" cy="13" r="4"/>
                     </svg>
-                    <strong>봉사 모집</strong>
+                    <strong>IT 봉사 웹</strong>
                 </router-link>
                 <router-link to="/cart" class="cart btn" v-if="$store.state.account.id">
                     <i class="fa fa-heart" aria-hidden="true"></i>
                 </router-link>
-                <router-link to="/pcart" class="cart btn" v-if="$store.state.account.id">
+                <router-link to="/pcart" class="pcart btn" v-if="$store.state.account.id">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </router-link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
@@ -90,7 +90,13 @@ header ul li i{
 }
 
 header .navbar .cart{
-    margin-left: auto;
+    margin-left:20px;
     color:#fff;
 }
+
+header .navbar .pcart{
+    margin-right:auto;
+    color:#fff;
+}
+
 </style>

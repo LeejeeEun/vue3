@@ -36,28 +36,9 @@
                                    id="username"
                                    v-model="state.form.name">
                         </div>
-                        <div class="col-12"><label for="address" class="form-label">주소</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="address"
-                                v-model="state.form.address">
-                        </div>
                     </div>
                     <hr class="my-4">
-                    <!--                            <h4 class="mb-3">결제 수단</h4>-->
-                    <!--                            <div class="my-3">-->
-                    <!--                                <div class="form-check">-->
-                    <!--                                    <input id="card" name="paymentMethod" type="radio"-->
-                    <!--                                           class="form-check-input" value="card" v-model="state.form.payment"><label-->
-                    <!--                                        class="form-check-label" for="card">신용 카드</label></div>-->
-                    <!--                                <div class="form-check">-->
-                    <!--                                    <input id="bank" name="paymentMethod" type="radio"-->
-                    <!--                                           class="form-check-input" value="bank" v-model="state.form.payment">-->
-                    <!--                                    <label-->
-                    <!--                                        class="form-check-label" for="bank">무통장 입금</label></div>-->
-                    <!--                            </div>-->
-                    <!--                            <label for="cc-name" class="form-label">카드 번호</label>-->
+
                     <input
                         type="text" class="form-control" id="cc-name" v-model="state.form.cardNumber">
                     <hr class="my-4">
@@ -88,7 +69,6 @@ export default {
                 pitems: "",
             }
         })
-
         const load = () => {
             axios.get("/api/pcart/pitems").then(({data}) => {
                 console.log(data);
