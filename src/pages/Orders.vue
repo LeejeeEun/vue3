@@ -7,6 +7,7 @@
                     <th>번호</th>
                     <th>신청자명</th>
                     <th>주소</th>
+                    <th>포인트</th>
                     <th>신청항목</th>
                 </tr>
                 </thead>
@@ -15,7 +16,8 @@
                     <td>{{ state.orders.length - idx1 }}</td>
                     <td>{{ o.name }}</td>
                     <td>{{ o.address }}</td>
-<!--                    <td>{{ o.payment }}</td>-->
+                    <td>{{ parseInt(o.payment) + 3 }}</td>
+
                     <td>
                         <div v-for="(i, idx2) in o.items" :key="idx2">{{i.name}}</div>
                     </td>

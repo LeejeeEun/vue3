@@ -49,7 +49,7 @@
                 <router-link to="/cart" class="cart btn" v-if="$store.state.account.id">
                     <i class="fa fa-heart" aria-hidden="true"></i>
                 </router-link>
-                <router-link to="/cart" class="cart btn" v-if="$store.state.account.id">
+                <router-link to="/pcart" class="cart btn" v-if="$store.state.account.id">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </router-link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
@@ -86,7 +86,7 @@ header ul li a{
 }
 
 header ul li i{
-   text-align: right;
+    text-align: right;
 }
 
 header .navbar .cart{

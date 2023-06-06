@@ -38,6 +38,7 @@
                                            class="form-control"
                                            id="username"
                                            v-model="state.form.name">
+<!--                                           lib.getNumberFormatted(computedPrice)>-->
                                 </div>
                                 <div class="col-12"><label for="address" class="form-label">주소</label>
                                     <input
@@ -45,6 +46,13 @@
                                             class="form-control"
                                             id="address"
                                             v-model="state.form.address">
+                                </div>
+                                <div class="col-12"><label for="address" class="form-label">주소</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="payment"
+                                        v-model="state.form.payment">
                                 </div>
                             </div>
 <!--                            <hr class="my-4">-->
