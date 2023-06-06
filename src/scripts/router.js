@@ -10,6 +10,10 @@ import Create from "@/pages/Create.vue";
 import Detail from "@/pages/Detail.vue";
 import BoardForm from "@/pages/BoardForm.vue";
 import Inform from "@/pages/Inform.vue";
+import POrder from "@/pages/POrder.vue";
+import POrders from "@/pages/POrders.vue";
+import PHome from "@/pages/PHome.vue";
+import PCart from "@/pages/PCart.vue";
 
 const routes= [
     {path: '/', component: Home},
@@ -22,6 +26,11 @@ const routes= [
     {path: "/detail/:contentId", name: "Detail", component: Detail},
     {path: "/createAccount", name: "BoardForm", component: BoardForm},
     {path: "/Inform", name: "Inform", component: Inform},
+    {path: '/porder', component: POrder},
+    {path: '/porders', component: POrders},
+    {path: '/phome', component: PHome},
+    {path: '/pcart', component: PCart}
+
 ]
 
 const router = createRouter({

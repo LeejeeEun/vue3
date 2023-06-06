@@ -4,24 +4,26 @@
         <div class="card-body">
             <p class="card-text">
                 <span>{{ item.name }} &nbsp;</span>
+
                 <span class="discount badge bg-danger">
-                    {{ item.discountPer }}%
+                    {{ item.discountPer }}P
                 </span>
             </p>
             <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-primary" @click="addToCart(item.id)">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <button class="btn btn-danger " @click="addToCart(item.id)">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
                 </button>
-                <button class="btn btn-primary" @click="addToCart(item.id)">
-                    <router-link :to="{ path: '/Inform' }">상세 페이지</router-link>
+
+                <button class="btn btn-success" @click="load(item.id)">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    <router-link :to="{ path: '/Inform' }" class="text-white">상세 페이지</router-link>
                 </button>
                 <small class="price text-muted">
                     {{ lib.getNumberFormatted(item.price)}}P
                 </small>
 
-                <small class="discount text-danger">
+                <small class="real text-danger">
                     {{ lib.getNumberFormatted(item.price + (item.price * item.discountPer / 100)) }}P
-                    봉사 신청
                 </small>
             </div>
         </div>
@@ -29,23 +31,23 @@
 </template>
 
 <script>
-  import lib from "@/scripts/lib";
-  import axios from "axios";
+import lib from "@/scripts/lib";
+import axios from "axios";
 
-  export default {
+export default {
     name: "Card",
-      props:{
+    props:{
         item: Object
-      },
-      setup(){
-        const addToCart = (itemId)=>{
-            axios.post(`/api/cart/items/${itemId}`).then(()=>{
+    },
+    setup() {
+        const addToCart = (itemId) => {
+            axios.post(`/api/cart/items/${itemId}`).then(() => {
                 console.log('success')
+                //window.alert("관심목록에 추가되었습니다")
             })
         };
-
         return {lib, addToCart}
-      }
+    }
 }
 </script>
 <style scoped>

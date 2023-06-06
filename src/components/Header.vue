@@ -13,6 +13,9 @@
                             <li>
                                 <router-link to="/" class="text-white">메인 화면</router-link>
                             </li>
+                            <li>
+                                <router-link to="/phome" class="text-white">포인트 상점</router-link>
+                            </li>
                             <li v-if="$store.state.account.id">
                                 <router-link to="/orders" class="text-white">내 정보</router-link>
                             </li>
@@ -42,6 +45,9 @@
                         <circle cx="12" cy="13" r="4"/>
                     </svg>
                     <strong>봉사 모집</strong>
+                </router-link>
+                <router-link to="/cart" class="cart btn" v-if="$store.state.account.id">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
                 </router-link>
                 <router-link to="/cart" class="cart btn" v-if="$store.state.account.id">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -78,6 +84,11 @@ export default {
 header ul li a{
     cursor: pointer;
 }
+
+header ul li i{
+   text-align: right;
+}
+
 header .navbar .cart{
     margin-left: auto;
     color:#fff;
