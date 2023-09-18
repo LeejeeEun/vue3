@@ -43,16 +43,12 @@ export default {
 }
 </script>
 <style scoped>
-.card .img {
+.pcard .img {
     display: inline-block;
     width:100%;
     height: 250px;
     background-size: cover;
     background-position: center;
-}
-
-.card .card-body .price {
-    text-decoration: line-through;
 }
 
 </style>
