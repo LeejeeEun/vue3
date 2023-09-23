@@ -22,7 +22,7 @@
                                     <h6 class="my-0">{{ i.name }}</h6>
                                 </div>
                                 <span class="text-muted">
-                                    {{ lib.getNumberFormatted(i.price - i.price * i.discountPer / 100) }}P
+                                    {{ lib.getNumberFormatted(i.price / 10) }}P
                                 </span>
                             </li>
                         </ul>
@@ -121,7 +121,7 @@ export default {
             let result = 0;
 
             for (let i of state.items) {
-                result += i.price - i.price * i.discountPer / 100;
+                result += i.price / 10;
             }
             return result;
         })

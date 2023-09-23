@@ -15,7 +15,8 @@
             <td>{{ state.porders.length - idx1 }}</td>
             <td>{{ o.name }}</td>
             <td>{{ o.address }}</td>
-            <td>{{ o.payment }}</td>
+<!--            <td>{{ o.cardNumber }}</td>-->
+<!--            <td>{{ o.payment }}</td>-->
             <td>
                 <div v-for="(i, idx2) in o.pitems" :key="idx2">{{i.name}}</div>
             </td>

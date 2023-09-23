@@ -19,6 +19,9 @@
                             <li v-if="$store.state.account.id">
                                 <router-link to="/orders" class="text-white">내 정보</router-link>
                             </li>
+                            <li v-if="$store.state.account.id">
+                                <router-link to="/porders" class="text-white">포인트 내역</router-link>
+                            </li>
                             <li>
                                 <router-link to="/createAccount" class="text-white">회원 가입</router-link>
                             </li>

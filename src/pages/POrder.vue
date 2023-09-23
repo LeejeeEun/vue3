@@ -38,9 +38,16 @@
                                 </div>
                             </div>
                             <hr class="my-4">
+                            <div class="col-12"><label for="address" class="form-label">주소</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="address"
+                                    v-model="state.form.address">
+                            </div>
 
-                            <input
-                                type="text" class="form-control" id="cc-name" v-model="state.form.cardNumber">
+<!--                            <input-->
+<!--                                type="text" class="form-control" id="cc-name" v-model="state.form.cardNumber">-->
                             <hr class="my-4">
                             <button class="w-100 btn btn-primary btn-lg" @click="submit()">구매 하기</button>
                         </div>
@@ -80,7 +87,7 @@ export default {
             const args = JSON.parse(JSON.stringify(state.form)) ;
             args.pitems = JSON.stringify(state.pitems);
             axios.post("/api/porders", args).then(()=>{
-                alert('신청되었습니다.');
+                alert('구매하였습니다.'); // 변경
                 router.push({path:"/porders"})
             })
         }
