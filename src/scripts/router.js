@@ -14,6 +14,8 @@ import POrder from "@/pages/POrder.vue";
 import POrders from "@/pages/POrders.vue";
 import PHome from "@/pages/PHome.vue";
 import PCart from "@/pages/PCart.vue";
+import Boards from "@/pages/Message.vue";
+
 
 
 const routes= [
@@ -30,7 +32,8 @@ const routes= [
     {path: '/porder', component: POrder},
     {path: '/porders', component: POrders},
     {path: '/phome', component: PHome},
-    {path: '/pcart', component: PCart}
+    {path: '/pcart', component: PCart},
+    {path: '/boards', component: Boards}
 ]
 
 const router = createRouter({
