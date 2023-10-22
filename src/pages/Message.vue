@@ -28,23 +28,71 @@
                 </tbody>
             </table>
 
+<!--            &lt;!&ndash; 수정 폼 &ndash;&gt;-->
+<!--            <div v-if="editMode">-->
+<!--                <form @submit.prevent="saveEditedBoard">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="editedEmail">Email</label>-->
+<!--                        <input type="text" id="editedEmail" v-model="editedBoard.email" class="form-control" />-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="editedPassword">비밀번호</label>-->
+<!--                        <input type="text" id="editedPassword" v-model="editedBoard.password" class="form-control" />-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="editedGood">선호 프로그래밍 언어</label>-->
+<!--                        <input type="text" id="editedGood" v-model="editedBoard.good" class="form-control" />-->
+<!--                    </div>-->
+<!--                    <button type="submit" class="btn btn-primary">저장</button>-->
+<!--                    <button @click="cancelEdit" class="btn btn-secondary">취소</button>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
             <!-- 수정 폼 -->
             <div v-if="editMode">
                 <form @submit.prevent="saveEditedBoard">
                     <div class="form-group">
                         <label for="editedEmail">Email</label>
-                        <input type="text" id="editedEmail" v-model="editedBoard.email" class="form-control" />
+                        <input
+                            type="text"
+                            id="editedEmail"
+                            v-model="editedBoard.email"
+                            class="form-control"/>
                     </div>
                     <div class="form-group">
                         <label for="editedPassword">비밀번호</label>
-                        <input type="text" id="editedPassword" v-model="editedBoard.password" class="form-control" />
+                        <input
+                            type="text"
+                            id="editedPassword"
+                            v-model="editedBoard.password"
+                            class="form-control"/>
                     </div>
                     <div class="form-group">
                         <label for="editedGood">선호 프로그래밍 언어</label>
-                        <input type="text" id="editedGood" v-model="editedBoard.good" class="form-control" />
-                    </div>
-                    <button type="submit" class="btn btn-primary">저장</button>
-                    <button @click="cancelEdit" class="btn btn-secondary">취소</button>
+                        <div>
+                            <label>
+                                <input
+                                    type="radio"
+                                    v-model="editedBoard.good"
+                                    value="JavaScript"/>
+                                JavaScript
+                            </label>
+                        </div>
+                            <div>
+                                <label>
+                                    <input type="radio" v-model="editedBoard.good" value="Python" />
+                                    Python
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="radio" v-model="editedBoard.good" value="Java" />
+                                    Java
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">저장</button>
+                        <button @click="cancelEdit" class="btn btn-secondary">취소</button>
                 </form>
             </div>
         </div>

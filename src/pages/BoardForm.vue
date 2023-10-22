@@ -1,28 +1,59 @@
+<!--<template>-->
+<!--    <div>-->
+<!--        <h1>회원 가입</h1>-->
+<!--        <form @submit.prevent="createBoard">-->
+<!--            <label htmlFor="title">ID:</label>-->
+<!--            <input type="text" id="title" v-model="board.email" required><br>-->
+<!--            <label htmlFor="content">PassWord:</label>-->
+<!--            <input type="password" id="content" v-model="board.password" required><br>-->
+<!--            <label htmlFor="good">선호 프로그래밍 언어:</label><br>-->
+<!--            <label>-->
+<!--                <input type="radio" v-model="board.good" value="JavaScript"> JavaScript-->
+<!--            </label><br>-->
+<!--            <label>-->
+<!--                <input type="radio" v-model="board.good" value="Python"> Python-->
+<!--            </label><br>-->
+<!--            <label>-->
+<!--                <input type="radio" v-model="board.good" value="Java"> Java-->
+<!--            </label><br>-->
+<!--            <button type="submit">가입하기</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</template>-->
 <template>
-    <div>
-        <h1>회원 가입</h1>
+    <div class="container">
+        <h1 class="mt-4">회원 가입</h1>
         <form @submit.prevent="createBoard">
             <label htmlFor="title">ID:</label>
-            <input type="text" id="title" v-model="board.email" required><br>
+            <input type="text" id="title" v-model="board.email" required /><br />
             <label htmlFor="content">PassWord:</label>
-            <input type="password" id="content" v-model="board.password" required><br>
-            <label htmlFor="good">선호 프로그래밍 언어:</label><br>
+            <input
+                type="password"
+                id="content"
+                v-model="board.password"
+                required
+            /><br />
+            <label htmlFor="good">선호 프로그래밍 언어:</label><br />
             <label>
-                <input type="radio" v-model="board.good" value="JavaScript"> JavaScript
-            </label><br>
+                <input type="radio" v-model="board.good" value="JavaScript" />
+                JavaScript </label
+            ><br />
             <label>
-                <input type="radio" v-model="board.good" value="Python"> Python
-            </label><br>
+                <input type="radio" v-model="board.good" value="Python" />
+                Python </label
+            ><br />
             <label>
-                <input type="radio" v-model="board.good" value="Java"> Java
-            </label><br>
-            <button type="submit">가입하기</button>
+                <input type="radio" v-model="board.good" value="Java" /> Java </label
+            ><br />
+            <button type="submit" class="btn">가입하기</button>
         </form>
     </div>
 </template>
 
+
 <script>
 import axios from "axios";
+
 
 export default {
     data() {
@@ -47,8 +78,6 @@ export default {
                     // 에러 처리를 수행합니다.
                 });
         },
-
-
 
     }
 };
