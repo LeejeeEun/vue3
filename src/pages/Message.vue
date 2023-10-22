@@ -28,26 +28,6 @@
                 </tbody>
             </table>
 
-<!--            &lt;!&ndash; 수정 폼 &ndash;&gt;-->
-<!--            <div v-if="editMode">-->
-<!--                <form @submit.prevent="saveEditedBoard">-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="editedEmail">Email</label>-->
-<!--                        <input type="text" id="editedEmail" v-model="editedBoard.email" class="form-control" />-->
-<!--                    </div>-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="editedPassword">비밀번호</label>-->
-<!--                        <input type="text" id="editedPassword" v-model="editedBoard.password" class="form-control" />-->
-<!--                    </div>-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="editedGood">선호 프로그래밍 언어</label>-->
-<!--                        <input type="text" id="editedGood" v-model="editedBoard.good" class="form-control" />-->
-<!--                    </div>-->
-<!--                    <button type="submit" class="btn btn-primary">저장</button>-->
-<!--                    <button @click="cancelEdit" class="btn btn-secondary">취소</button>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
             <!-- 수정 폼 -->
             <div v-if="editMode">
                 <form @submit.prevent="saveEditedBoard">
@@ -57,7 +37,8 @@
                             type="text"
                             id="editedEmail"
                             v-model="editedBoard.email"
-                            class="form-control"/>
+                            class="form-control"
+                        />
                     </div>
                     <div class="form-group">
                         <label for="editedPassword">비밀번호</label>
@@ -65,7 +46,8 @@
                             type="text"
                             id="editedPassword"
                             v-model="editedBoard.password"
-                            class="form-control"/>
+                            class="form-control"
+                        />
                     </div>
                     <div class="form-group">
                         <label for="editedGood">선호 프로그래밍 언어</label>
@@ -74,25 +56,26 @@
                                 <input
                                     type="radio"
                                     v-model="editedBoard.good"
-                                    value="JavaScript"/>
+                                    value="JavaScript"
+                                />
                                 JavaScript
                             </label>
                         </div>
-                            <div>
-                                <label>
-                                    <input type="radio" v-model="editedBoard.good" value="Python" />
-                                    Python
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    <input type="radio" v-model="editedBoard.good" value="Java" />
-                                    Java
-                                </label>
-                            </div>
+                        <div>
+                            <label>
+                                <input type="radio" v-model="editedBoard.good" value="Python" />
+                                Python
+                            </label>
                         </div>
-                        <button type="submit" class="btn btn-primary">저장</button>
-                        <button @click="cancelEdit" class="btn btn-secondary">취소</button>
+                        <div>
+                            <label>
+                                <input type="radio" v-model="editedBoard.good" value="Java" />
+                                Java
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">저장</button>
+                    <button @click="cancelEdit" class="btn btn-secondary">취소</button>
                 </form>
             </div>
         </div>
@@ -100,7 +83,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
     data() {
@@ -109,10 +92,10 @@ export default {
             editMode: false,
             editedBoard: {
                 id: null,
-                email: '',
-                password: '',
-                good: ''
-            }
+                email: "",
+                password: "",
+                good: "",
+            },
         };
     },
     mounted() {
@@ -121,11 +104,11 @@ export default {
     methods: {
         async fetchBoards() {
             try {
-                const response = await axios.get('/api/boards');
+                const response = await axios.get("/api/boards");
                 this.boards = response.data;
             } catch (error) {
                 console.error(error);
-                alert('데이터를 불러오는 데 실패했습니다.');
+                alert("데이터를 불러오는 데 실패했습니다.");
             }
         },
         editBoard(board) {
@@ -142,14 +125,19 @@ export default {
                 this.cancelEdit();
             } catch (error) {
                 console.error(error);
-                alert('수정 중 오류가 발생했습니다.');
+                alert("수정 중 오류가 발생했습니다.");
             }
         },
         cancelEdit() {
             // 수정 모드 종료
             this.editMode = false;
             // 초기화
-            Object.assign(this.editedBoard, { id: null, email: '', password: '', good: '' });
+            Object.assign(this.editedBoard, {
+                id: null,
+                email: "",
+                password: "",
+                good: "",
+            });
         },
         async deleteBoard(id) {
             try {
@@ -157,7 +145,7 @@ export default {
                 await this.fetchBoards();
             } catch (error) {
                 console.error(error);
-                alert('삭제 중 오류가 발생했습니다.');
+                alert("삭제 중 오류가 발생했습니다.");
             }
         },
     },

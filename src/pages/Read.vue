@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <table class="table">
+    <div class="container">
+        <table class="table mt-5">
             <tr>
                 <th>글쓴이</th>
                 <th>제목</th>

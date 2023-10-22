@@ -1,25 +1,3 @@
-<!--<template>-->
-<!--    <div>-->
-<!--        <h1>회원 가입</h1>-->
-<!--        <form @submit.prevent="createBoard">-->
-<!--            <label htmlFor="title">ID:</label>-->
-<!--            <input type="text" id="title" v-model="board.email" required><br>-->
-<!--            <label htmlFor="content">PassWord:</label>-->
-<!--            <input type="password" id="content" v-model="board.password" required><br>-->
-<!--            <label htmlFor="good">선호 프로그래밍 언어:</label><br>-->
-<!--            <label>-->
-<!--                <input type="radio" v-model="board.good" value="JavaScript"> JavaScript-->
-<!--            </label><br>-->
-<!--            <label>-->
-<!--                <input type="radio" v-model="board.good" value="Python"> Python-->
-<!--            </label><br>-->
-<!--            <label>-->
-<!--                <input type="radio" v-model="board.good" value="Java"> Java-->
-<!--            </label><br>-->
-<!--            <button type="submit">가입하기</button>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</template>-->
 <template>
     <div class="container">
         <h1 class="mt-4">회원 가입</h1>
@@ -47,39 +25,43 @@
             ><br />
             <button type="submit" class="btn">가입하기</button>
         </form>
+        <!--    <b-modal v-model="showModal" title="회원 가입 완료">-->
+        <!--      <p>회원 가입이 완료되었습니다!</p>-->
+        <!--    </b-modal>-->
     </div>
 </template>
 
-
 <script>
 import axios from "axios";
-
 
 export default {
     data() {
         return {
             board: {
-                email: '',
-                password: ''
-            }
+                email: "",
+                password: "",
+                // good: "",
+            },
+            // showModal: false,
         };
     },
     methods: {
         createBoard() {
             // AJAX 요청 등을 통해 백엔드에 게시글 생성 요청을 보냅니다.
             // 예시로 axios를 사용한 코드를 작성하였습니다.
-            axios.post('/api/boards', this.board)
-                .then(response => {
+            axios
+                .post("/api/boards", this.board)
+                .then((response) => {
                     console.log(response.data);
                     // 게시글 생성 후 필요한 처리를 수행합니다.
+                    // this.showModal = true;
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.error(error);
                     // 에러 처리를 수행합니다.
                 });
         },
-
-    }
+    },
 };
 </script>
 <style scoped>

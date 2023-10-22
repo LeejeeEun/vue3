@@ -1,10 +1,12 @@
 <template>
-    <div>
-        <input v-model="writer" placeholder="글쓴이"/>
-        <input v-model="title" placeholder="제목"/>
-        <textarea v-model="content" placeholder="내용"/>
-        <!--        <button @click="index !== undefined ? update() : write()">{{index !== undefined ? '수정' : '작성'}}</button>-->
-        <button @click="write">작성</button>
+    <div class="container">
+        <div class="row mt-5">
+            <input v-model="writer" placeholder="글쓴이" class="col-6" style="height: 5vh;"/>
+            <input v-model="title" placeholder="제목" class="col-6" style="height: 5vh;"/>
+            <textarea v-model="content" placeholder="내용" class="col-12" style="height: 30vh;"/>
+            <!--        <button @click="index !== undefined ? update() : write()">{{index !== undefined ? '수정' : '작성'}}</button>-->
+            <button @click="write" class="col-12" style="height: 5vh;">작성</button>
+        </div>
     </div>
 </template>
 <script>
