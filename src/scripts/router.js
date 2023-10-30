@@ -15,7 +15,8 @@ import POrders from "@/pages/POrders.vue";
 import PHome from "@/pages/PHome.vue";
 import PCart from "@/pages/PCart.vue";
 import Boards from "@/pages/Message.vue";
-import Crawler from "@/pages/Crawler.vue"; // 추가
+import Crawler from "@/pages/Crawler.vue";
+import Message from "@/pages/Message.vue"; // 추가
 
 
 
@@ -35,6 +36,7 @@ const routes= [
     {path: '/phome', component: PHome},
     {path: '/pcart', component: PCart},
     {path: '/boards', component: Boards},
+    {path: '/edit', component: Message},
     {path: '/Crawling', component: Crawler} // 추가
 ]
 

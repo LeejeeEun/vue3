@@ -1,30 +1,30 @@
 <template>
-<div class="porders">
-<div class="container">
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>번호</th>
-            <th>신청자명</th>
-            <th>주소</th>
-            <th>신청 항목</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="(o, idx1) in state.porders" :key="idx1">
-            <td>{{ state.porders.length - idx1 }}</td>
-            <td>{{ o.name }}</td>
-            <td>{{ o.address }}</td>
-<!--            <td>{{ o.cardNumber }}</td>-->
-<!--            <td>{{ o.payment }}</td>-->
-            <td>
-                <div v-for="(i, idx2) in o.pitems" :key="idx2">{{i.name}}</div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-</div>
+    <div class="porders">
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>신청자명</th>
+                    <th>주소</th>
+                    <th>신청 항목</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(o, idx1) in state.porders" :key="idx1">
+                    <td>{{ state.porders.length - idx1 }}</td>
+                    <td>{{ o.name }}</td>
+                    <td>{{ o.address }}</td>
+                    <!--            <td>{{ o.cardNumber }}</td>-->
+                    <!--            <td>{{ o.payment }}</td>-->
+                    <td>
+                        <div v-for="(i, idx2) in o.pitems" :key="idx2">{{i.name}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </template>
 
 <script>

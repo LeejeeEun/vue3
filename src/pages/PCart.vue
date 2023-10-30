@@ -2,11 +2,11 @@
     <div class="pcart">
         <div class="container">
             <ul><li v-for="(i, idx) in state.pitems" :key="idx">
-                    <img :src="i.imgPath"/>
-                    <span class="name">{{i.name}}</span>
-                    <span class="price">{{ lib.getNumberFormatted(i.price)}}P</span>
-                    <i class="fa fa-trash" @click="remove(i.id)"></i>
-                </li></ul>
+                <img :src="i.imgPath"/>
+                <span class="name">{{i.name}}</span>
+                <span class="price">{{ lib.getNumberFormatted(i.price)}}P</span>
+                <i class="fa fa-trash" @click="remove(i.id)"></i>
+            </li></ul>
             <router-link to="/porder" class="btn btn-primary">구매하기</router-link>
         </div>
     </div>

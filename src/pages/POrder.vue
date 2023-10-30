@@ -46,8 +46,8 @@
                                     v-model="state.form.address">
                             </div>
 
-<!--                            <input-->
-<!--                                type="text" class="form-control" id="cc-name" v-model="state.form.cardNumber">-->
+                            <!--                            <input-->
+                            <!--                                type="text" class="form-control" id="cc-name" v-model="state.form.cardNumber">-->
                             <hr class="my-4">
                             <button class="w-100 btn btn-primary btn-lg" @click="submit()">구매 하기</button>
                         </div>

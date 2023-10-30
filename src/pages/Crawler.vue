@@ -1,6 +1,7 @@
 <template>
+    <img :src="require('@/assets/1365.jpg')" alt="이미지" style="display: block;width: 30%; height: 30%;justify-content: center; align-items: center;">
     <div>
-        <h1>1365 봉사 데이터 가져오기</h1>
+        <h1>1365 봉사 데이터(크롤링)</h1>
         <ul>
             <li v-for="data in crawledData" :key="data">{{ data }}</li>
         </ul>

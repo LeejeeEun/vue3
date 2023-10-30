@@ -1,4 +1,5 @@
 <template>
+    <img :src="require('@/assets/itx.jpg')" alt="이미지" style="display: block;width: 100%; height: 50%;">
     <div class="home">
         <div class="album py-5 bg-light">
             <div class="container">
