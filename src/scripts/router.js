@@ -15,8 +15,9 @@ import POrders from "@/pages/POrders.vue";
 import PHome from "@/pages/PHome.vue";
 import PCart from "@/pages/PCart.vue";
 import Boards from "@/pages/Message.vue";
-import Crawler from "@/pages/Crawler.vue";
-import Message from "@/pages/Message.vue"; // 추가
+import Crawler from "@/pages/Crawler.vue"; // 주석처리
+import Message from "@/pages/Message.vue";
+// import Volunteer from "@/pages/Volunteer.vue"; // 추가
 
 
 
@@ -37,7 +38,8 @@ const routes= [
     {path: '/pcart', component: PCart},
     {path: '/boards', component: Boards},
     {path: '/edit', component: Message},
-    {path: '/Crawling', component: Crawler} // 추가
+    {path: '/Crawling', component: Crawler}, // 주석처리
+    // {path: '/Crawling', component: Volunteer}  // 추가 및 수정
 ]
 
 const router = createRouter({
